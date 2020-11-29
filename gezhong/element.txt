@@ -24,3 +24,68 @@ Vue.use(ElementUI)+
 
 弹出的提示框
 this.$message.success('登录成功');
+
+
+小容器里面 一个大的div里面有很多div 就是card的卡片
+
+<el-row>
+            <el-col>
+                <div style="margin-top: 15px;">                                   ↓
+                    <el-input placeholder="请输入内容" v-model="query" class="inputsearch">
+
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                    <el-button type="success">添加用户</el-button>
+                </div>
+            </el-col>
+</el-row>
+
+如果样式不对 需要自己修改样式
+.inputsearch{
+    width: 300px;
+}
+
+
+表格
+<el-table :data="tableData">(data数据源[]) =>  
+
+<el-table-column type="index" label="日期" prop="date"> 
+label="表头"  prop="name"
+
+type="index"
+给每一列下标数字从1开始
+
+
+使用Vue过滤器时                         
+                    <el-table-column
+                        prop="create_time"
+                        label="创建日期">
+                        <template slot-scope="userlist">
+                            {{userlist.row.create_time | fmtdate}}
+                        </template>
+                    </el-table-column>
+
+<el-table-column>是一个组件
+ <template>也是一个组件 两个组件之间 不能通信
+ 所以要使用slot-scope="userlist"    userlist是数据源
+
+userlist.row这个是固定格式
+
+userlist.row.create_time  使用userlist里面的create_time 属性 中间得加一个row    
+
+
+
+                    <el-table-column
+                        prop="is_active"
+                        label="用户状态">       ↓
+                        <template slot-scope="userlist">
+                            <el-switch          ↓ 
+                                v-model="userlist.row.is_active"
+                                active-color="#13ce66"
+                                inactive-color="#ff4949">
+                        </el-switch>
+                        </template>
+                    </el-table-column>
+
+只要是组件嵌套的，都要 在 template的slot-scope="userlist" 绑定数据源 
+然后再 子组件的v-model="userlist.row.is_active"  userlist对象后面加上row再点对象 才可以使用

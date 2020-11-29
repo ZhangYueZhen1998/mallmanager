@@ -9,11 +9,21 @@ import 'element-ui/lib/theme-chalk/index.css'
 // 引入公共css文件  @ 是src的意思   所有的组件都生效
 import "@/assets/reset.css"
 
+import moment from "moment"
 // import axios from "axios"
 // 引入我们自己的js的axios插件
 import MyHttpServer from "@/plugins/http.js"
 
 Vue.config.productionTip = false
+
+// 全局过滤器
+Vue.filter('fmtdate', v => {
+    return moment(v).format('YYYY-MM-DD')
+})
+
+
+
+
 
 // 注册elment-ul
 Vue.use(ElementUI)

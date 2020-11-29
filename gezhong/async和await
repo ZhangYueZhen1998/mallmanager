@@ -1,0 +1,34 @@
+ES7 async和await
+
+让异步代码看起来像同步代码
+
+async login(){
+        const res=await this.$http.get("login",this.formdata)
+
+            const{username,password,stauts}=res.data
+            //   登录成功跳转
+              if(this.formdata.username==username && this.formdata.password==password){  
+                    this.$router.push({name:"home"})
+                this.$message.success('登录成功');
+              }else{
+                 this.$message.warning('登录失败');
+              }
+}
+
+
+const res=await this.$http.get("login",this.formdata)
+在 异步代码前 加上 await 然后使用res 接受返回参数
+
+然后再await最近的函数前面加上 async   也就是 async login() 就可以正常使用了
+
+
+
+
+
+
+
+
+
+
+
+

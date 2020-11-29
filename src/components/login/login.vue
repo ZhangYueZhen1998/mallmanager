@@ -29,23 +29,39 @@ export default {
       }
   },
   methods: {
-      login(){
-          this.$http.get("login",this.formdata).then(res=>{
-             
+    async login(){
+        const res=await this.$http.get("login",this.formdata)
             const{username,password,stauts}=res.data
-            console.log(username)
-            console.log(password)
             //   登录成功跳转
+            console.log(res)
               if(this.formdata.username==username && this.formdata.password==password){  
                     this.$router.push({name:"home"})
                 this.$message.success('登录成功');
-              
+                // 加入一个本地存储
+                localStorage.setItem("token",1);
               }else{
                  this.$message.warning('登录失败');
               }
-          }).catch(err=>{
-               console.log("接口失败")
-          })
+    
+
+
+
+
+        //   这是好的代码
+
+        //   this.$http.get("login",this.formdata).then(res=>{ 
+        //     const{username,password,stauts}=res.data
+        //     //   登录成功跳转
+        //       if(this.formdata.username==username && this.formdata.password==password){  
+        //             this.$router.push({name:"home"})
+        //         this.$message.success('登录成功');
+        
+        //       }else{
+        //          this.$message.warning('登录失败');
+        //       }
+        //   }).catch(err=>{
+        //        console.log("接口失败")
+        //   })
       }
   },
 }

@@ -1,0 +1,24 @@
+<el-row>
+  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+</el-row>
+
+layout布局
+
+头部24块 每份分八块
+这个:span="8"  这个数字可以修改  但是要一共有24份
+
+el-col是列  横着排
+el-row是行  竖着排
+一共分为24栏
+
+
+
+
+
+
+
+
+
+
