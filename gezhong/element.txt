@@ -1,0 +1,26 @@
+npm i element-ui
+项目安装
+
+
+main.js里面
+
+// 引入elment-ul
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+// 注册elment-ul
+Vue.use(ElementUI)+
+
+表单这个是可以控制表单的位置
+通过设置 label-position 属性可以改变表单域标签的位置，可选值为 top、left，当设为 top 时标签会置于表单域的顶部
+:label-position="labelPosition" 
+
+表单绑定的数据对象
+:model="formLabelAlign"
+<el-input v-model="formLabelAlign.name"></el-input>
+<el-input v-model="formLabelAlign.region"></el-input>
+<el-input v-model="formLabelAlign.type"></el-input>
+
+
+弹出的提示框
+this.$message.success('登录成功');

@@ -1,0 +1,29 @@
+cmd 安装 命令
+
+npm i -g json-server
+
+
+创建一个文件夹
+在这个文件夹创建一个db.json
+
+在db.json文件创建数据 （如果这个文件数据有错误 是不）
+
+
+
+然后再文件夹的目录 输入cmd 进入控制台
+然后输入
+json-server --watch db.json
+
+开启服务
+
+如果端口被占用了 就使用 json-server --watch --port 3001 db.json
+
+
+
+
+
+
+
+
+
+
