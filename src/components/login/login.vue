@@ -37,7 +37,7 @@ export default {
               if(this.formdata.username==username && this.formdata.password==password){  
                     this.$router.push({name:"home"})
                 this.$message.success('登录成功');
-                // 加入一个本地存储
+                // 
                 localStorage.setItem("token",1);
               }else{
                  this.$message.warning('登录失败');

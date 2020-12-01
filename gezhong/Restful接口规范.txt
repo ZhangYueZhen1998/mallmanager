@@ -41,14 +41,50 @@ GET /brands/1    就是返回 brands 里面id为1的数据
 
 POST /brands     查询brands数据
 
+ // get 查询数据
+    // axios.get("http://localhost:3000/brands").then(res => {
+    //     const {
+    //         status,
+    //         data
+    //     } = res;
+    //     if (status == 200) {
+    //         console.log(data);
+    //     }
+    // }).catch(err => {
+    //     console.log(err);
+    // })
+
+
+
 PUT /brands/1    修改brands 里面id为1的数据
 
-DELETE /brands/1 删除brands 里面id为1的数据
+ //    put为修改数据  http://localhost:3000/brands/5  后面的5位要修改id为5的数据
+    // axios.put("http://localhost:3000/brands/5", {
+    //     name: "我被修改了",
+    //     data: new Date()
+    // }).then(res => {
+    //     console.log(res.status);
+    // })
 
 
 
 
+DELETE/brands/1 删除brands 里面id为1的数据
 
+ // axios.delete("http://localhost:3000/brands/4").then(res => {
+    //     console.log(res.status);
+    // })
+
+
+POST    create  新增一个没有id的资源
+
+// 会jsonp会自动生成id   post添加数据
+    axios.post("http://localhost:3000/brands", {
+        name: "b嗯嗯",
+        data: new Date()
+    }).then(res => {
+        console.log(res.status);
+    })
 
 
 

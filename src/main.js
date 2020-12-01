@@ -21,10 +21,6 @@ Vue.filter('fmtdate', v => {
     return moment(v).format('YYYY-MM-DD')
 })
 
-
-
-
-
 // 注册elment-ul
 Vue.use(ElementUI)
 Vue.use(MyHttpServer)

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //  @  就是src
-import Login from "@/components/login/login.vue"
+import Login from "@/components/login/login"
 import home from "@/components/home/home.vue"
 import users from "@/components/users/user.vue"
 Vue.use(Router)
